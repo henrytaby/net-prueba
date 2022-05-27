@@ -1,9 +1,11 @@
 ﻿using Prueba.Entidades;
+using static System.Console;
 
 namespace Prueba
 {
     class Program{
         static void Main(string[] args)
+        
         {
             var u = new Universidad("Universidad UCATEC");
 
@@ -29,6 +31,27 @@ namespace Prueba
             
             //var M = new Materia("100","Programación I");
             //Console.WriteLine("Materia "+ M.nombre);
+            PrintUniverdad(u);
+        }
+        
+        private static void PrintUniverdad(Universidad objeto)
+        {
+        
+            WriteLine("===================");
+            WriteLine(objeto.Nombre);
+            WriteLine("===================");
+            if(objeto?.Materias != null)
+            {
+                foreach(var materia in objeto.Materias)
+                {
+                    Console.WriteLine($"Codig {materia.Codigo}, Nombre {materia.Nombre} ");
+                }
+                WriteLine("===================");
+            }
+            
         }
     }
+
+   
+
 }
